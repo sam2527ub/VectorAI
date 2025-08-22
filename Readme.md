@@ -951,9 +951,10 @@ Collaboration Summary
  - What experiments could leadership run to test whether changes—like flexible hours or reduced meetings—improve both metrics?
  - What cultural barriers might prevent employees from speaking up about burnout?
  - How can leaders inspire employees to find meaning in their work, rather than feeling drained by it?
-2. MAIN QUESTION : I have a job interview tomorrow for my dream job, but I just tested positive for a bad cold and I’m worried I won’t come across as professional. The interview is at 2pm tomorrow and I can’t reschedule. What do I do?
+2.MAIN QUESTION : I have a job interview tomorrow for my dream job, but I just tested positive for a bad cold and I’m worried I won’t come across as professional. The interview is at 2pm tomorrow and I can’t reschedule. What do I do?
    - How do I prepare for the interview?
    - How do I conduct myself with confidence?
+
 
 
 
