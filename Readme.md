@@ -298,32 +298,32 @@ semantic_clean → SentenceTransformer → persona_embeddings → similarity_sco
 ### 6. Final Selection
 similarity_scores + sentiment + multi_criteria → ranked_personas → validation
 9. Saved files :
-# Vectorization
+## Vectorization
 - improved_tfidf_vectorizer.pkl (TF-IDF model)
 - sentiment_feature_scaler.pkl (sentiment normalization)
 - final_tfidf_reducer.pkl (dimensionality reduction)
 
-# Clustering  
+## Clustering  
 - improved_kmeans_model.pkl (4-cluster model)
 - final_enhanced_kmeans.pkl (enhanced clustering)
 
-# Topic Modeling
+## Topic Modeling
 - topic_domain_vectorizer.pkl (domain vocabulary)
 - topic_lda_model.pkl (LDA model)
 - topic_theme_names.pkl (semantic topics)
 
-# Final Personas
+## Final Personas
 - semantic_therapist_personas.csv 
 - semantic_wise_personas.csv 
 - semantic_intelligent_personas.csv 
 
-# Each persona backed by:
+## Each persona backed by:
 
 - Quantified behavioral similarity scores (0.3+ semantic similarity)
 - Validated emotional profiles (appropriate sentiment patterns)
 - Diverse character inspirations (multiple movies and character types)
 - Reproducible selection methodology (saved models and pipelines)
-# Collaboration Architecture
+## Collaboration Architecture
 This system is built around a **multi-agent collaboration model** inspired by real human consultations.  
 Think of it as **three specialists in a room, discussing a case together**:  
 
