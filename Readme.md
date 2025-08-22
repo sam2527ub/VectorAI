@@ -242,37 +242,37 @@ To ensure personas reflect **real behavioral meaning**, I used **SentenceTransfo
 ---
 
 ## 7. Final Therapeutic Persona Selection  
-# Validation criteria met:
+### Validation criteria met:
 - Average semantic similarity: 0.441 (vs 0.3 threshold)
 - Average polarity: 0.234 (positive sentiment)
 - Average subjectivity: 0.612 (personal/emotional communication)
 - Average intensity: 0.067 (calm, non-overwhelming energy)
 
-# Top candidates:
+### Top candidates:
 1. DR. TAYLOR (A Clockwork Orange) - Score: 0.567
    "I'm sure it won't be long now... you seem well on the way to complete recovery"
    
 2. THERAPIST (Good Will Hunting) - Score: 0.523  
    "How does that make you feel? It's not your fault, you know that, right?"
-# Validation criteria met:
+### Validation criteria met:
 Average semantic similarity: 0.398
 Average polarity: 0.128 (balanced, slightly positive)
 Average subjectivity: 0.447 (objective style)
 Average intensity: 0.054 (very calm delivery)
 
-# Top candidates:
+### Top candidates:
 1. SOMERSET (Seven) - Score: 0.492
    "Ernest Hemingway once wrote, 'The world is a fine place worth fighting for.' I agree with the second part."
    
 2. MIRACLE MAX (Princess Bride) - Score: 0.467
    "True love is the greatest thing in the world, except for a nice MLT"
-# Validation criteria met:
+### Validation criteria met:
 Average semantic similarity: 0.379
 Average polarity: 0.089 (neutral, fact-focused)
 Average subjectivity: 0.421 (objective approach)
 Average intensity: 0.078 (controlled, measured)
 
-# Top candidates:
+### Top candidates:
 1. SPOCK (Star Trek) - Score: 0.456
    "I'm not human... logically, the needs of the many outweigh the needs of the few"
    
@@ -280,25 +280,23 @@ Average intensity: 0.078 (controlled, measured)
    "Abstract mathematics, relativity of dimension... fascinating!"
 
 8. Technical Implementation Pipeline :
-   ```bash
- # 1. Data Aggregation & Multi-Level Cleaning
+ ### 1. Data Aggregation & Multi-Level Cleaning
 raw_data → surface_clean → semantic_clean → full_clean → metadata_extraction
 
-# 2. Feature Engineering  
+### 2. Feature Engineering  
 semantic_clean → TF-IDF(800) + sentiment(3) + stylistic(15) → combined_features(818)
 
-# 3. Clustering & Analysis
+### 3. Clustering & Analysis
 combined_features → K-means(4) → cluster_analysis → persona_identification
 
-# 4. Topic Modeling
+### 4. Topic Modeling
 full_clean → domain_vocabulary(73) → LDA(6) → topic_validation
 
-# 5. Semantic Similarity
+### 5. Semantic Similarity
 semantic_clean → SentenceTransformer → persona_embeddings → similarity_scoring
 
-# 6. Final Selection
+### 6. Final Selection
 similarity_scores + sentiment + multi_criteria → ranked_personas → validation
-```
 9. Saved files :
 # Vectorization
 - improved_tfidf_vectorizer.pkl (TF-IDF model)
