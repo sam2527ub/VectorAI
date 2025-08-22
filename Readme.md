@@ -123,123 +123,6 @@ From clustering, 4 behavioral personas appeared:
 
 ## Persona Discovery Process
 
-### 1. Dataset Analysis
-
-**Source**: Cornell Movie-Dialogs Corpus (~220,000 movie conversations)
-
-I analyzed movie dialogues to automatically discover distinct communication patterns rather than creating artificial personas. The process extracts:
-- **Stylistic features**: Sentence length, punctuation usage, vocabulary patterns
-- **Semantic content**: Topic modeling to understand domain expertise
-- **Character profiles**: Aggregated dialogue patterns by movie character
-
-### 2. Feature Engineering
-
-**Text Processing Pipeline**:
-- Advanced tokenization with spaCy
-- Sentiment analysis (compound scores)
-- Topic modeling using TF-IDF and dimensionality reduction
-- Stylistic metrics (avg sentence length, punctuation ratios)
-
-**Character-Level Aggregation**:
-- Group dialogues by character ID
-- Calculate average features per character
-- Filter characters with sufficient dialogue samples
-
-### 3. Clustering Analysis
-
-**Multi-Stage Clustering**:
-- K-means clustering on combined features
-- Semantic similarity analysis within clusters
-- Manual validation of cluster coherence
-
-**Persona Selection**:
-- **Cluster 1**: Therapist personas (empathetic, supportive language)
-- **Cluster 2**: Expert personas (analytical, structured communication)
-- **Cluster 3**: Wise mentor personas (philosophical, experience-based advice)
-
-**Final Candidates** (Based on dialogue quality and distinctiveness):
-- **Therapist**: Characters with high empathy scores and supportive language patterns
-- **Expert**: Characters with analytical language and structured reasoning
-- **Wise Mentor**: Characters with philosophical language and life experience themes
-
----
-
-## Collaboration Architecture
-
-### LangGraph Workflow Structure
-
-```
-User Input → Domain Classification → Agent Selection → Discussion Phase → Response Generation
-     ↓                    ↓                ↓               ↓                ↓
-Context Storage → Knowledge Retrieval → Persona Activation → Citation Tracking → Final Output
-```
-
-### Core Components
-
-#### 1. ChatState Management
-```python
-class ChatState(TypedDict):
-    messages: List[BaseMessage]
-    current_agent: str
-    collaboration_needed: bool
-    agent_responses: Dict[str, str]
-    final_response: str
-    context_summary: str
-    discussion_history: List[Dict]
-    user_preference: Optional[str]
-```
-
-#### 2. Collaborative Knowledge Manager
-- **Purpose**: Coordinates information sharing between agents
-- **Features**: 
-  - Cross-agent context sharing
-  - Citation tracking
-  - Knowledge boundary enforcement
-
-#### 3. Domain Classification
-- **Input Analysis**: Categorizes user queries into therapeutic, technical, or philosophical domains
-- **Agent Routing**: Determines single-agent vs. collaborative responses
-- **Context Preservation**: Maintains conversation history across agent interactions
-
-### Agent Discussion Protocol
-
-1. **Initial Assessment**: Each agent analyzes the problem independently
-2. **Evidence Sharing**: Agents share their initial findings and reasoning
-3. **Collaborative Refinement**: Agents challenge and build upon each other's ideas
-4. **Consensus Building**: The team works toward a unified response
-5. **Response Synthesis**: Final answer incorporates insights from all agents
-
----
-
-## Citation System
-
-### Multi-Layer Transparency
-
-Our citation system provides **three levels of attribution**:
-
-#### 1. Character Inspiration Citations
-- **Source**: Movie character dialogue patterns that inspired each agent's communication style
-- **Example**: *"Communication style inspired by [Character Name] from [Movie Title]"*
-- **Purpose**: Shows the authentic dialogue foundation for each persona
-
-#### 2. Inter-Agent Attribution
-- **Source**: Ideas shared between agents during collaborative discussions
-- **Example**: *"Building on insights from [Agent Name]: [specific contribution]"*
-- **Purpose**: Traces how agents influence each other's reasoning
-
-#### 3. Reasoning Documentation
-- **Source**: Step-by-step thought processes and evidence evaluation
-- **Example**: *"Based on analysis of [specific data/pattern]: [conclusion]"*
-- **Purpose**: Makes the logical flow transparent and verifiable
-
-### Implementation Features
-
-- **Automatic Citation Generation**: Every response includes relevant attribution
-- **Citation Validation**: Cross-references ensure accuracy
-- **User Accessibility**: Citations are formatted for easy understanding
-- **Extensible Framework**: New citation types can be added as the system grows  
-
----
 
 ## Steps in the Process  
 1. **Data Preprocessing Pipeline**  
@@ -396,7 +279,8 @@ Average intensity: 0.078 (controlled, measured)
 2. DEAN FULTON (Time Machine) - Score: 0.434
    "Abstract mathematics, relativity of dimension... fascinating!"
 
-8. Technical Implementation Pipeline : 
+8. Technical Implementation Pipeline :
+   ```bash
  # 1. Data Aggregation & Multi-Level Cleaning
 raw_data → surface_clean → semantic_clean → full_clean → metadata_extraction
 
@@ -414,6 +298,7 @@ semantic_clean → SentenceTransformer → persona_embeddings → similarity_sco
 
 # 6. Final Selection
 similarity_scores + sentiment + multi_criteria → ranked_personas → validation
+```
 9. Saved files :
 # Vectorization
 - improved_tfidf_vectorizer.pkl (TF-IDF model)
