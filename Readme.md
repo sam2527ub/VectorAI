@@ -1058,7 +1058,6 @@ Translation: Shows character inspiration, reasoning process, and how other agent
 Collaboration Summary
 🤝 COLLABORATION: Knowledge shared: 6, Questions asked: 4, Dialogues: 8
 ```
-# All vectors and CSV files are pushed to the vectors folder except the final used ones
 
 ## LIMITATIONS :
 - Persona selection is random within validated clusters, leading to inconsistent character inspiration and potential inappropriate matches.
