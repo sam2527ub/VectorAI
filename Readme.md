@@ -699,8 +699,9 @@ cd VectorAI
 touch .env
 
 # Add your API key to .env file
-echo "GEMINI_API_KEY=AIzaSyBghwGLhb8ee-fSZIxi8U0ymR2iP1g_ePs" >> .env
-## Please use your Gemini API key here if the above key’s request limit is exceeded.💬 Run Chatbot
+echo "GEMINI_API_KEY=your_gemini_key" >> .env
+# Please use your Gemini API key here.
+Run Chatbot
 # Launch the collaborative agent system
 python3 chatbot7.py
 ```
