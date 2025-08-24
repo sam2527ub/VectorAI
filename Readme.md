@@ -1,50 +1,27 @@
 # Multi-Agent AI System
 
 ## Project Overview
-
-This project builds an **interactive multi-agent AI system** where different persona-driven agents, each with their own knowledge boundaries, **communicate and collaborate** to solve complex problems.
-
-Instead of relying on a single AI, the system allows multiple agents to:
-- Share evidence
-- Challenge each other's assumptions
-- Build on each other's ideas
-- Reach conclusions no single agent could achieve alone
-
-The user can **observe, steer, or directly talk** to individual agents, while the system ensures realistic expert teamwork, transparent reasoning, and actionable solutions.
-
-Personas are **not pre-defined**. They are discovered automatically from the **Cornell Movie-Dialogs Corpus** using unsupervised analysis of style and semantic features. Each persona becomes an independent agent with:
-- Its own prompting frame
-- Specialized knowledge boundary
-- Independent retrieval index
-
-We use **LangGraph** to orchestrate agent communication, define how findings and citations are shared, and enforce strict **knowledge isolation** at the node level.
-
----
+This project designs and implements an interactive, multi-agent system where persona-driven AI agents—each constrained to a distinct knowledge boundary—communicate and collaborate to analyze complex problems. A user observes and steers the interaction while agents exchange evidence, challenge assumptions, and synthesize conclusions that no single agent could reach alone. Personas are discovered from data (Cornell Movie-Dialogs Corpus) via unsupervised analysis (style + semantic features → clustering), not pre-defined. Each resultant persona becomes an agent with specialized knowledge, its own prompting frame. We orchestrate agent–agent dialogue using LangGraph (nodes, edges, state), define protocol messages for sharing findings/citations, and enforce knowledge isolation at the node level. The outcome showcases realistic expert coordination, transparent reasoning, and actionable recommendations.---
 
 ## Solution Approach
 
-I designed a **multi-agent collaborative framework** with LangGraph that simulates a **therapeutic consultation team**.
-
+I designed and implemented a multi-agent collaborative system using LangGraph that simulates a therapeutic consultation team. The system features three specialized AI agents, each inspired by authentic movie character dialogue patterns, that can:
 ### Key Features
 
-- **Smart Collaboration**: Detects when multiple agents are needed vs. when a single agent can reply
-- **Agent Discussions**: Agents talk to each other, debate, and refine ideas before answering the user
-- **Distinct Personas**: Each agent keeps its own style and domain expertise
-- **Transparent Reasoning**: Responses include citations and source inspirations from movie dialogues
-- **Context Retention**: Agents remember what has been discussed across multiple turns
-- **User Choice**: The system can auto-select the best agent, or the user can choose directly
-- **Explainability**: Agents can explain why they reached a conclusion
-- **Extensible Design**: New personas or datasets can be added easily---
-
+Automatically detect when collaboration is needed vs. single-agent responses.
+- Engage in productive inter-agent discussions before responding to users.
+- Share domain-specific knowledge and build upon each other's insights. 
+- Maintain distinct personas while working toward unified solutions.
+- Provide transparent citations linking responses to character inspirations.
 ## Persona Discovery  
 **Data Source**: Cornell Movie-Dialogs Corpus (220,579 conversational exchanges)  
 
-### Pipeline Used  
-- TF-IDF vectorization (stylistic features)  
-- Sentiment analysis (emotional tone)  
-- Topic modeling (semantic themes)  
-- Semantic embedding analysis (deeper meaning)  
-- K-Means clustering (grouping personas)  
+I made a clustering pipeline and used the below techniques :
+- TF-IDF vectorisation
+- Sentiment analysis  
+- Topic modeling 
+- Semantic embedding analysis 
+- K-Means clustering 
 
 ### Results  
 From clustering, 4 behavioral personas appeared:  
@@ -199,7 +176,7 @@ After testing, **K=4** was selected as the best balance between distinctiveness 
 
 ## 4. Sentiment Analysis  
 
-By combining clustering with sentiment features, personas became **more interpretable and realistic**.  
+By combining clustering with sentiment features, personas became **more realistic**.  
 
 ![alt text](sentiment.png)  
 
@@ -323,6 +300,7 @@ similarity_scores + sentiment + multi_criteria → ranked_personas → validatio
 - Validated emotional profiles (appropriate sentiment patterns)
 - Diverse character inspirations (multiple movies and character types)
 - Reproducible selection methodology (saved models and pipelines)
+
 ## Collaboration Architecture
 This system is built around a **multi-agent collaboration model** inspired by real human consultations.  
 Think of it as **three specialists in a room, discussing a case together**:  
@@ -415,7 +393,7 @@ The workflow mirrors a **professional consultation process**:
 ## 4. Collaboration Decision   
 
 ### 4.1 Smart Domain Analysis  
-Like a triage system, it scores each domain (0–10):  
+It scores each domain (0–10):  
 - Therapist → emotions, anxiety, stress.  
 - Expert → practical solutions, strategies.  
 - Wise Mentor → meaning, life perspective.  
@@ -503,7 +481,6 @@ A **balanced solution** that addresses both emotional stability and practical su
 
 ## 9. Technical Innovation Summary  
 
-### 9.1 Key Innovations  
 - **Intelligent collaboration triggers** → Auto-detects single vs. multi-agent needs.  
 - **Pre-response strategy session** → Agents plan before answering user.  
 - **Persistent knowledge sharing** → No loss of insights across turns.  
@@ -513,15 +490,10 @@ A **balanced solution** that addresses both emotional stability and practical su
 - **Error recovery & adaptability** → System can recover from misclassifications and reroute agents dynamically.  
 - **Scalability** → Architecture supports adding new agents/domains without redesign.  
 
-### 9.2 User Experience Benefits  
-- **Seamless** → User just asks, system handles the rest.  
-- **Natural** → Can target agents directly or let the system decide.  
-- **Authentic personalities** → Each agent maintains its unique style.  
-- **Comprehensive solutions** → Covers emotional, practical, and philosophical dimensions.  
 Conditional Workflow Routing - LangGraph decides single vs. multi-agent based on domain analysis
 Pre-Response Strategy Sessions - Agents discuss before responding to users
 Persistent Knowledge Sharing - Centralized state maintains all inter-agent communications
-Domain Integrity Enforcement - Agents stay in their expertise while building on others
+Domain Integrity - Agents stay in their expertise while building on others
 Dynamic Communication - Agents can ask questions and share insights in real-time
 State Consistency - No context loss across multiple agent interactions
 
@@ -566,7 +538,7 @@ The system works across **three layers of traceability**:
 ## 2. Character Inspiration Tracking  
 
 ### 2.1 PersonaKnowledge System  
-- Agents draw inspiration from a **curated database of movie characters**.  
+- Agents draw inspiration from a the corpus
 - Each character has unique dialogue patterns and communication styles.  
 - Random selection ensures **variety without breaking domain consistency**.  
 
@@ -684,7 +656,6 @@ Users can request:
 - An agent’s reasoning 💭  
 - Or another agent’s contribution 🔗  
 
-This creates a system that is **trustworthy, verifiable, and collaborative**.  
 
 ## 🚀 Environment Setup
 
