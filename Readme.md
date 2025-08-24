@@ -693,16 +693,16 @@ This creates a system that is **trustworthy, verifiable, and collaborative**.
 pip install -r requirements.txt
 
 # Clone your repository
-git clone <your-repository-url>
+git clone https://github.com/sam2527ub/VectorAI.git
 cd VectorAI
 # Create .env file in project root
 touch .env
 
 # Add your API key to .env file
-echo "GEMINI_API_KEY=your_actual_api_key_here" >> .env
-💬 Run Chatbot
+echo "GEMINI_API_KEY=AIzaSyBghwGLhb8ee-fSZIxi8U0ymR2iP1g_ePs" >> .env
+## Please use your Gemini API key here if the above key’s request limit is exceeded.💬 Run Chatbot
 # Launch the collaborative agent system
-python chatbot7.py
+python3 chatbot7.py
 ```
 
 # Expected Output on Startup
